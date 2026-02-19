@@ -3,63 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Air-store | Премиальная техника</title>
+    <title>Air-store | Premium</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-theme">
 
-    <nav class="navbar">
-        <div class="container">
+    <nav class="glass-nav">
+        <div class="container nav-flex">
             <a href="#" class="logo">Air-store</a>
-            <ul class="nav-links">
-                <li><a href="#">iPhone</a></li>
-                <li><a href="#">Mac</a></li>
-                <li><a href="#">iPad</a></li>
-                <li><a href="#">Watch</a></li>
-            </ul>
-            <div class="nav-icons">
-                <span>🔍</span>
-                <span>🛒</span>
+            <div class="tabs-menu">
+                <button class="tab-link active" onclick="openTab(event, 'iphones')">iPhone</button>
+                <button class="tab-link" onclick="openTab(event, 'macs')">Mac</button>
+                <button class="tab-link" onclick="openTab(event, 'watches')">Watch</button>
             </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <span class="new-tag">Новинка</span>
-            <h1>iPhone 17 Pro</h1>
-            <p>Титановый корпус. Невероятная мощь.</p>
-            <div class="hero-btns">
-                <a href="#" class="btn-primary">Купить</a>
-                <a href="#" class="btn-secondary">Узнать больше ></a>
-            </div>
-        </div>
-        <div class="hero-image-wrap">
-            <img src="https://www.apple.com/v/iphone-16-pro/c/images/overview/welcome/hero_endframe__ov6ewcr9p9m6_large.jpg" alt="iPhone 17 Pro">
+    <header class="hero-premium">
+        <div class="hero-text">
+            <h1 class="gradient-text">Air-store</h1>
+            <p>Технологии, которые меняют всё.</p>
         </div>
     </header>
 
-    <section class="products container">
-        <div class="product-grid">
-            <div class="card card-dark">
-                <h2>MacBook Pro</h2>
-                <p>Для самых сложных задач.</p>
-                <img src="https://www.apple.com/v/macbook-pro/aj/images/overview/welcome/hero_endframe__b6679543h276_large.jpg" alt="MacBook">
-                <a href="#" class="btn-buy">Купить</a>
-            </div>
-            <div class="card card-light">
-                <h2>iPad Pro</h2>
-                <p>Тонкий как лезвие.</p>
-                <img src="https://www.apple.com/v/ipad-pro/ao/images/overview/closer-look/finish_silver_13__erh2u8n7a4wi_large.jpg" alt="iPad">
-                <a href="#" class="btn-buy-dark">Купить</a>
+    <main class="container">
+        <div id="iphones" class="tab-content active">
+            <div class="product-grid">
+                <div class="item-card large">
+                    <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=800&q=80" alt="iPhone">
+                    <div class="card-info">
+                        <h3>iPhone 16 Pro</h3>
+                        <p>Титановый дизайн. От 119 990 ₽</p>
+                        <button class="buy-btn">В корзину</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Air-store. Сделано со вкусом.</p>
-    </footer>
+        <div id="macs" class="tab-content">
+            <div class="product-grid">
+                <div class="item-card large">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80" alt="MacBook">
+                    <div class="card-info">
+                        <h3>MacBook Pro M3</h3>
+                        <p>Мощь для профи. От 199 990 ₽</p>
+                        <button class="buy-btn">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div id="watches" class="tab-content">
+            <div class="product-grid">
+                <div class="item-card large">
+                    <img src="https://images.unsplash.com/photo-1544117518-30dd0f789a42?w=800&q=80" alt="Watch">
+                    <div class="card-info">
+                        <h3>Apple Watch 10</h3>
+                        <p>Тоньше. Ярче. От 45 000 ₽</p>
+                        <button class="buy-btn">Выбрать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
