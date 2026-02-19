@@ -5,6 +5,7 @@
     --text: #ffffff;
     --accent: #0071e3;
     --secondary-text: #86868b;
+    --nav-bg: rgba(0, 0, 0, 0.75);
 }
 
 body {
@@ -13,99 +14,92 @@ body {
     background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
+    padding-top: 80px; /* Отступ, чтобы контент не залезал под шапку */
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* Карточки товаров */
-.item-card.large {
-    background: var(--card-bg);
-    border-radius: 30px;
-    padding: 40px;
+/* --- ПРЕМИАЛЬНАЯ ШАПКА --- */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52px; /* Узкая элегантная панель */
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px); /* Эффект стекла */
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-bottom: 40px;
-    transition: transform 0.3s ease;
 }
 
-.item-card img {
-    width: 45%;
-    max-height: 400px;
-    object-fit: contain; /* Картинка теперь не обрезается */
-    border-radius: 20px;
-}
-
-/* МОДАЛЬНОЕ ОКНО (ФИКСИРУЕМ) */
-.modal {
-    display: none; /* Скрыто изначально */
-    position: fixed; 
-    z-index: 9999; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Затемнение фона */
-    backdrop-filter: blur(10px); /* Эффект размытия Apple */
-}
-
-.modal-content {
-    background: #1c1c1e;
-    margin: 10vh auto; /* 10% от высоты экрана сверху */
-    padding: 40px;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 30px;
-    text-align: center;
-    position: relative;
-    border: 1px solid #333;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-}
-
-.close-btn {
-    position: absolute;
-    right: 25px;
-    top: 20px;
-    font-size: 32px;
-    cursor: pointer;
-    color: var(--secondary-text);
-}
-
-/* Форма внутри окна */
-#orderForm {
+.nav-flex {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 25px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-#orderForm input {
-    padding: 16px;
-    border-radius: 12px;
-    border: 1px solid #333;
-    background: #2c2c2e;
-    color: white;
-    font-size: 16px;
-    outline: none;
-}
-
-#orderForm input:focus {
-    border-color: var(--accent);
-}
-
-.buy-btn {
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
-    font-size: 16px;
+.logo {
+    font-size: 19px;
     font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
+    text-decoration: none;
+    color: var(--text);
+    opacity: 0.92;
+    transition: opacity 0.3s;
 }
 
-.buy-btn:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
+.logo:hover { opacity: 1; }
+
+/* Кнопки переключения (Табы) */
+.tabs-menu {
+    display: flex;
+    gap: 8px;
 }
+
+.tab-link {
+    background: transparent;
+    border: none;
+    color: var(--secondary-text);
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-link:hover {
+    color: var(--text);
+}
+
+.tab-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+/* Заголовок Hero */
+.hero-premium {
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.gradient-text {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(180deg, #ffffff 0%, #86868b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+.hero-premium p {
+    color: var(--secondary-text);
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* --- ОСТАЛЬНОЙ КОД (КАРТОЧКИ И МОДАЛКА) --- */
