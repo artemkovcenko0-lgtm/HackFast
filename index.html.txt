@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackFast | Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">HackFast</div>
+    </nav>
+
+    <header>
+        <h1>Добро пожаловать в HackFast</h1>
+        <p>Мой первый проект на GitHub Pages</p>
+        <a href="#about" class="btn">Узнать больше</a>
+    </header>
+
+    <section id="about" class="container">
+        <h2>О проекте</h2>
+        <p>Этот сайт был создан и опубликован за считанные минуты. Здесь я буду размещать свои идеи и код.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Скорость</h3>
+                <p>Быстрая загрузка и чистый код.</p>
+            </div>
+            <div class="card">
+                <h3>Дизайн</h3>
+                <p>Адаптивность под мобильные устройства.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 HackFast Project</p>
+    </footer>
+
+</body>
+</html>
