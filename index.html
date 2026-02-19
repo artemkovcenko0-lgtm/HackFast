@@ -3,54 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Air-Store | Официальный партнер Apple</title>
+    <title>Air-store — Легкость технологий</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">i-Store</a>
+        <div class="container">
+            <a href="#" class="logo">Air-store</a>
             <ul class="nav-links">
                 <li><a href="#">iPhone</a></li>
                 <li><a href="#">Mac</a></li>
                 <li><a href="#">iPad</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">Аксессуары</a></li>
+                <li><a href="#">AirPods</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>iPhone 16 Pro</h1>
-            <p>Создан для Apple Intelligence.</p>
-            <div class="hero-links">
-                <a href="#" class="btn-primary">Купить</a>
-                <a href="#" class="btn-link">Узнать больше ></a>
-            </div>
+    <header class="hero">
+        <div class="hero-content container">
+            <h1>Air-store</h1>
+            <p>Технологии, которые вдохновляют на полет.</p>
+            <a href="#products" class="btn">Выбрать модель</a>
         </div>
-        <img src="https://www.apple.com/v/iphone-16-pro/c/images/overview/welcome/hero_endframe__ov6ewcr9p9m6_large.jpg" alt="iPhone 16 Pro" class="hero-img">
-    </section>
+    </header>
 
-    <section class="category-grid">
-        <div class="cat-card mac">
-            <h2>MacBook Air</h2>
-            <p>Умный. Тонкий. Мощный.</p>
-            <a href="#" class="btn-link">Купить ></a>
-            <img src="https://www.apple.com/v/macbook-air/q/images/overview/design/design_top_m3__cl6f97978nuq_large.jpg" alt="Mac">
-        </div>
-        <div class="cat-card watch">
-            <h2>Apple Watch Series 10</h2>
-            <p>Тонкая работа.</p>
-            <a href="#" class="btn-link">Купить ></a>
-            <img src="https://www.apple.com/v/watch/bl/images/overview/select/product_s10__96u4p99nd7me_large.png" alt="Watch">
+    <section id="products" class="products-section container">
+        <h2>Новинки этой недели</h2>
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1592890288564-76628a30a657?w=400&q=80" alt="Smartphone">
+                <h3>AirPhone 16 Pro</h3>
+                <p class="price">105 000 ₽</p>
+                <button class="add-to-cart">Купить</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80" alt="Laptop">
+                <h3>AirBook M3</h3>
+                <p class="price">142 000 ₽</p>
+                <button class="add-to-cart">Купить</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1588333328347-4001d6317a1d?w=400&q=80" alt="Earbuds">
+                <h3>AirBuds Max</h3>
+                <p class="price">24 900 ₽</p>
+                <button class="add-to-cart">Купить</button>
+            </div>
+            
         </div>
     </section>
 
     <footer>
-        <p>Цены указаны в ознакомительных целях. Разработано для AirStor.</p>
+        <div class="container">
+            <p>&copy; 2026 Air-store. Официальный представитель технологий будущего.</p>
+        </div>
     </footer>
 
 </body>
