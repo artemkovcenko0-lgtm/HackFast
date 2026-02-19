@@ -3,41 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HackFast | Главная</title>
+    <title>HackFast Store — Магазин техники</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">HackFast</div>
+        <div class="logo">HF STORE</div>
+        <div class="menu">
+            <a href="#">Смартфоны</a>
+            <a href="#">Ноутбуки</a>
+            <a href="#">Аксессуары</a>
+        </div>
     </nav>
 
-    <header>
-        <h1>Добро пожаловать в HackFast</h1>
-        <p>Мой первый проект на GitHub Pages</p>
-        <a href="#about" class="btn">Узнать больше</a>
+    <header class="hero">
+        <h1>Будущее уже здесь</h1>
+        <p>Лучшие девайсы по лучшим ценам в HackFast</p>
     </header>
 
-    <section id="about" class="container">
-        <h2>О проекте</h2>
-        <p>Этот сайт был создан и опубликован за считанные минуты. Здесь я буду размещать свои идеи и код.</p>
+    <main class="container">
+        <h2 class="section-title">Популярные товары</h2>
         
-        <div class="grid">
-            <div class="card">
-                <h3>Скорость</h3>
-                <p>Быстрая загрузка и чистый код.</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">New</div>
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300" alt="Phone">
+                <h3>HF Phone 15 Pro</h3>
+                <p class="price">99 990 ₽</p>
+                <button class="buy-btn">В корзину</button>
             </div>
-            <div class="card">
-                <h3>Дизайн</h3>
-                <p>Адаптивность под мобильные устройства.</p>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300" alt="Laptop">
+                <h3>HF Book Air M3</h3>
+                <p class="price">124 990 ₽</p>
+                <button class="buy-btn">В корзину</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" alt="Headphones">
+                <h3>HF Audio Max</h3>
+                <p class="price">45 000 ₽</p>
+                <button class="buy-btn">В корзину</button>
             </div>
         </div>
-    </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 HackFast Project</p>
+        <p>&copy; 2026 HackFast Store. Все права защищены.</p>
     </footer>
 
 </body>
-
 </html>
