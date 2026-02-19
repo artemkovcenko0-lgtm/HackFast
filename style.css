@@ -142,10 +142,34 @@ body {
     font-size: 16px;
 }
 
-.close-btn {
-    float: right;
+/* КРАСИВАЯ КНОПКА КУПИТЬ */
+.buy-btn {
+    background: #0071e3; /* Фирменный синий Apple */
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px; /* Скругленные края */
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
-    font-size: 24px;
-    color: #86868b;
+    transition: all 0.2s ease; /* Плавность при наведении */
+}
+
+/* Эффект при наведении */
+.buy-btn:hover {
+    background: #0077ed;
+    transform: scale(1.05); /* Кнопка чуть увеличится */
+}
+
+/* Эффект при нажатии */
+.buy-btn:active {
+    transform: scale(0.95); /* Кнопка чуть сожмется */
+}
+
+/* Отступ для кнопки в модальном окне */
+.modal-content .buy-btn {
+    width: 100%; /* В окне кнопка будет на всю ширину */
+    margin-top: 15px;
+    padding: 14px;
 }
 
