@@ -22,55 +22,52 @@ function openTab(evt, tabName) {
 function showModal(productName = "") {
     const modal = document.getElementById("orderModal");
     const modalTitle = modal.querySelector("h2");
-    if (productName) {
-        modalTitle.innerText = "Заказ: " + productName;
-    } else {
-        modalTitle.innerText = "Оформление заказа";
-    }
+    modalTitle.innerText = productName ? "Заказ: " + productName : "Оформление заказа";
     modal.style.display = "block";
     document.body.style.overflow = "hidden"; 
 }
 
-// 3. Логика закрытия окна
+// 3. Закрытие окна
 function closeModal() {
     document.getElementById("orderModal").style.display = "none";
     document.body.style.overflow = "auto"; 
 }
 
-// 4. Закрытие окна при клике на фон
 window.onclick = function(event) {
-    var modal = document.getElementById("orderModal");
-    if (event.target == modal) {
-        closeModal();
-    }
+    if (event.target == document.getElementById("orderModal")) closeModal();
 }
 
-// 5. ОТПРАВКА ЗАКАЗА В TELEGRAM (С ТВОИМ НОВЫМ ID)
+// 4. ОТПРАВКА В TELEGRAM С ХАРАКТЕРИСТИКАМИ
 document.getElementById('orderForm').onsubmit = function(e) {
     e.preventDefault(); 
     
     const token = "8583072238:AAHlyiw7PHkiXP2lSU1CuJ9uhI9epjM2x14";
-    const chat_id = "7485083333"; // Твой актуальный Chat ID
+    const chat_id = "7485083333"; 
     
     const name = this.querySelector('input[type="text"]').value;
     const phone = this.querySelector('input[type="tel"]').value;
+    const storage = document.getElementById('storage').value;
+    const color = document.getElementById('color').value;
     const product = document.querySelector("#orderModal h2").innerText;
 
-    const message = `🚀 *Новый заказ!*\n📦 *Товар:* ${product}\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}`;
+    const message = `🚀 *Новый заказ!*\n\n` +
+                    `📦 *Товар:* ${product}\n` +
+                    `💾 *Память:* ${storage}\n` +
+                    `🎨 *Цвет:* ${color}\n\n` +
+                    `👤 *Имя:* ${name}\n` +
+                    `📞 *Телефон:* ${phone}`;
 
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
 
     fetch(url)
         .then(response => {
             if (response.ok) {
-                alert(`Спасибо, ${name}! Заказ отправлен менеджерам.`);
+                alert(`Спасибо, ${name}! Заказ на ${product} (${storage}) успешно отправлен.`);
                 closeModal();
                 this.reset();
             } else {
-                alert("Ошибка отправки. Убедитесь, что вы нажали START в боте.");
+                alert("Ошибка! Проверьте, запущен ли бот в Telegram.");
             }
         })
-        .catch(error => {
-            alert("Ошибка сети. Попробуйте позже.");
-        });
+        .catch(() => alert("Ошибка сети. Попробуйте еще раз."));
 }
