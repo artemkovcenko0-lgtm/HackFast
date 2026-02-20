@@ -63,7 +63,7 @@ document.getElementById('orderForm').onsubmit = function(e) {
     fetch(url)
         .then(response => {
             if (response.ok) {
-                alert(`Спасибо, ${name}! Заказ отправлен вам в Telegram.`);
+                alert(`Спасибо, ${name}! Заказ отправлен менеджерам.`);
                 closeModal();
                 this.reset();
             } else {
