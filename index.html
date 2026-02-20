@@ -59,19 +59,72 @@
         </div>
 
         <div id="ipads" class="tab-content">
-             <div class="product-grid">
+            <div class="product-grid">
                 <div class="item-card large animate-fade">
                     <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80" alt="iPad Pro">
                     <div class="card-info">
                         <h3>iPad Pro M4</h3>
-                        <p>Невероятно тонкий. Мощный.</p>
+                        <p>Невероятно тонкий. Самый мощный iPad.</p>
                         <span class="price">от 2.100 BYN</span>
                         <button class="buy-btn" onclick="showModal('iPad Pro M4', 2100)">Купить</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="audio" class="tab-content">
+            <div class="product-grid">
+                <div class="item-card large animate-fade">
+                    <img src="https://images.unsplash.com/photo-1588423770670-459249767664?w=800&q=80" alt="AirPods Pro">
+                    <div class="card-info">
+                        <h3>AirPods Pro 2</h3>
+                        <p>Адаптивное аудио. Магия звука.</p>
+                        <span class="price">от 850 BYN</span>
+                        <button class="buy-btn" onclick="showModal('AirPods Pro 2', 850)">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="watches" class="tab-content">
+            <div class="product-grid">
+                <div class="item-card large animate-fade">
+                    <img src="https://images.unsplash.com/photo-1544117518-30dd0f789a42?w=800&q=80" alt="Apple Watch">
+                    <div class="card-info">
+                        <h3>Apple Watch Series 10</h3>
+                        <p>Тоньше дизайн. Больше возможностей.</p>
+                        <span class="price">от 1.500 BYN</span>
+                        <button class="buy-btn" onclick="showModal('Apple Watch Series 10', 1500)">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <section class="reviews container">
+        <h2 class="gradient-text" style="text-align: center; margin-top: 60px; margin-bottom: 30px;">Отзывы клиентов</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Заказал iPhone 16 Pro, привезли через 2 часа. Оригинал, сервис на высоте!"</p>
+                <span class="author">— Александр В.</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Лучшие цены на MacBook. Очень довольна покупкой и гарантией."</p>
+                <span class="author">— Мария К.</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Брал Apple Watch в подарок. Все объяснили, помогли настроить. Рекомендую!"</p>
+                <span class="author">— Дмитрий П.</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Air-store. Premium Experience.</p>
+    </footer>
 
     <div id="orderModal" class="modal">
         <div class="modal-content animate-fade">
@@ -88,7 +141,7 @@
                 
                 <label class="field-label">Объем памяти:</label>
                 <select id="storage" class="modal-select" onchange="updatePrice()">
-                    <option value="128GB" data-add="0">128 GB (Базовая цена)</option>
+                    <option value="128GB" data-add="0">128 GB (Базовая)</option>
                     <option value="256GB" data-add="250">256 GB (+250 BYN)</option>
                     <option value="512GB" data-add="600">512 GB (+600 BYN)</option>
                     <option value="1TB" data-add="1000">1 TB (+1000 BYN)</option>
