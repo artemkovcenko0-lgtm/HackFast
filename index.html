@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Air-store | Ultra Premium</title>
+    <title>Air-store | Premium</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
 
@@ -15,50 +15,95 @@
             <div class="tabs-menu">
                 <button class="tab-link active" onclick="openTab(event, 'iphones')">iPhone</button>
                 <button class="tab-link" onclick="openTab(event, 'macs')">Mac</button>
-                <button class="tab-link" onclick="openTab(event, 'ipads')">iPad</button>
                 <button class="tab-link" onclick="openTab(event, 'audio')">Audio</button>
-                <button class="tab-link" onclick="openTab(event, 'watches')">Watch</button>
             </div>
         </div>
     </nav>
 
     <header class="hero-premium">
-        <div class="hero-text animate-up">
+        <div class="container">
             <h1 class="gradient-text">Будущее уже в руках.</h1>
-            <p>Эксклюзивные новинки в Air-store</p>
+            <p>Только оригинальная техника Apple</p>
         </div>
     </header>
 
     <main class="container">
         <div id="iphones" class="tab-content active">
             <div class="product-grid">
-                <div class="item-card large animate-fade">
+                <div class="item-card animate-fade">
                     <img src="https://www.apple.com/v/iphone/home/bv/images/overview/select/iphone_16_pro__erp68f9v7mqa_large.png" alt="iPhone 16 Pro">
-                    <div class="card-info">
-                        <h3>iPhone 16 Pro</h3>
-                        <p>Титановый корпус. Новый уровень камеры.</p>
-                        <span class="price">от 1.500 BYN</span>
-                        <button class="buy-btn" onclick="showModal('iPhone 16 Pro', 1500)">Купить</button>
-                    </div>
+                    <h3>iPhone 16 Pro</h3>
+                    <p class="price">от 1.500 BYN</p>
+                    <button class="buy-btn" onclick="showModal('iPhone 16 Pro', 1500)">Купить</button>
                 </div>
             </div>
         </div>
 
         <div id="macs" class="tab-content">
             <div class="product-grid">
-                <div class="item-card large animate-fade">
+                <div class="item-card animate-fade">
                     <img src="https://www.apple.com/v/macbook-pro/aj/images/overview/welcome/hero_endframe__e667v8l7onqq_large.jpg" alt="MacBook Pro">
-                    <div class="card-info">
-                        <h3>MacBook Pro M3</h3>
-                        <p>Экстремальная производительность для профи.</p>
-                        <span class="price">от 2.500 BYN</span>
-                        <button class="buy-btn" onclick="showModal('MacBook Pro M3', 2500)">Купить</button>
-                    </div>
+                    <h3>MacBook Pro M3</h3>
+                    <p class="price">от 2.500 BYN</p>
+                    <button class="buy-btn" onclick="showModal('MacBook Pro M3', 2500)">Купить</button>
                 </div>
             </div>
         </div>
 
-        <div id="ipads" class="tab-content">
+        <div id="audio" class="tab-content">
             <div class="product-grid">
-                <div class="item-card large animate-fade">
-                    <img src="
+                <div class="item-card animate-fade">
+                    <img src="https://www.apple.com/v/airpods-pro/h/images/overview/magsafe_case__f6m3879be6ie_large.png" alt="AirPods Pro 2">
+                    <h3>AirPods Pro 2</h3>
+                    <p class="price">от 850 BYN</p>
+                    <button class="buy-btn" onclick="showModal('AirPods Pro 2', 850)">Купить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="about-us container">
+        <div class="features-grid">
+            <div class="feature-card"><h3>💎 Оригинал</h3><p>Гарантия качества</p></div>
+            <div class="feature-card"><h3>⚡ Доставка</h3><p>2 часа по Минску</p></div>
+        </div>
+    </section>
+
+    <div id="orderModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h2 id="modalProductTitle">Заказ</h2>
+            <p>Цена: <span id="currentPrice"></span> BYN</p>
+            <input type="text" id="name" placeholder="Ваше имя">
+            <input type="tel" id="phone" placeholder="Ваш телефон">
+            <button class="buy-btn" onclick="alert('Заказ принят!')">Отправить</button>
+            <button onclick="closeModal()" style="background:none; border:none; color:gray; cursor:pointer; margin-top:10px;">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function showModal(name, price) {
+            document.getElementById('modalProductTitle').innerText = name;
+            document.getElementById('currentPrice').innerText = price;
+            document.getElementById('orderModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
